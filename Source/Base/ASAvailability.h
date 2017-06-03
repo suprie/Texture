@@ -30,23 +30,23 @@
 #define AS_AT_LEAST_IOS9   (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_9_0)
 #define AS_AT_LEAST_IOS10  (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_10_0)
 
-// If Yoga is available, make it available anywhere we use ASAvailability.
-// This reduces Yoga-specific code in other files.
-// NOTE: Yoga integration is experimental and not fully tested. Use with caution and test layouts carefully.
-#ifndef YOGA_HEADER_PATH
-  #define YOGA_HEADER_PATH <Yoga/Yoga.h>
-#endif
-
-#ifndef YOGA
-  #define YOGA __has_include(YOGA_HEADER_PATH)
-#endif
-
-// Contiguous Yoga layout attempts to build a connected tree of YGNodeRef objects, across multiple levels
-// in the ASDisplayNode tree (based on .yogaChildren). When disabled, ASYogaLayoutSpec is used, with a
-// disjoint Yoga tree for each level in the hierarchy. Currently, both modes are experimental.
-#ifndef YOGA_TREE_CONTIGUOUS
-  #define YOGA_TREE_CONTIGUOUS 0  // To enable, set to YOGA, as the code depends on YOGA also being set.
-#endif
+//// If Yoga is available, make it available anywhere we use ASAvailability.
+//// This reduces Yoga-specific code in other files.
+//// NOTE: Yoga integration is experimental and not fully tested. Use with caution and test layouts carefully.
+//#ifndef YOGA_HEADER_PATH
+//  #define YOGA_HEADER_PATH <Yoga/Yoga.h>
+//#endif
+//
+//#ifndef YOGA
+//  #define YOGA __has_include(YOGA_HEADER_PATH)
+//#endif
+//
+//// Contiguous Yoga layout attempts to build a connected tree of YGNodeRef objects, across multiple levels
+//// in the ASDisplayNode tree (based on .yogaChildren). When disabled, ASYogaLayoutSpec is used, with a
+//// disjoint Yoga tree for each level in the hierarchy. Currently, both modes are experimental.
+//#ifndef YOGA_TREE_CONTIGUOUS
+//  #define YOGA_TREE_CONTIGUOUS 0  // To enable, set to YOGA, as the code depends on YOGA also being set.
+//#endif
 
 #define AS_PIN_REMOTE_IMAGE __has_include(<PINRemoteImage/PINRemoteImage.h>)
 #define AS_IG_LIST_KIT __has_include(<IGListKit/IGListKit.h>)
